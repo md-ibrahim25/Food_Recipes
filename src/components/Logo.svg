@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Plate -->
+  <circle cx="32" cy="32" r="28" fill="#FFD700" stroke="#F4C430" stroke-width="4"/>
+  <!-- Fork -->
+  <rect x="22" y="14" width="3" height="20" fill="#6B8E23"/>
+  <rect x="23" y="14" width="1" height="5" fill="#A9A9A9"/>
+  <rect x="21" y="19" width="1" height="5" fill="#A9A9A9"/>
+  <rect x="24" y="19" width="1" height="5" fill="#A9A9A9"/>
+  <rect x="22" y="24" width="3" height="3" fill="#A9A9A9"/>
+  <!-- Spoon -->
+  <path d="M40 22c0-1.1-.9-2-2-2s-2 .9-2 2 2 .9 2 2 2-.9 2-2z" fill="#6B8E23"/>
+  <rect x="39" y="26" width="4" height="2" fill="#A9A9A9"/>
+  <rect x="40" y="28" width="2" height="8" fill="#6B8E23"/>
+  <path d="M41 36c-1 0-1 1-1 2 0 1 1 2 2 2s2-1 2-2c0-1-1-2-2-2z" fill="#6B8E23"/>
+</svg>
