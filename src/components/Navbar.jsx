@@ -1,7 +1,7 @@
 import { GlobalContext } from "@/contexts/GlobalContext";
 import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from './logo.svg'
+
 function Navbar() {
   const { searchParams, setSearchParams, handleSubmit } =
     useContext(GlobalContext);
