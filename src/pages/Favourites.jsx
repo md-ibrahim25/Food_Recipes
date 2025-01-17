@@ -9,7 +9,6 @@ function Favourites() {
 
   //Fetch the data for all the favorite recipes
   async function fetchFavoriteRecipesData(favoritesList) {
-    console.log("Favorite List ID : " + favoritesList);
     if (favoritesList && favoritesList.length) {
       setLoading(true); // Start loading
       try {

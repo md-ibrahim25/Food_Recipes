@@ -44,14 +44,12 @@ export default function GlobalState({ children }) {
   //Handle submit of request from user
   async function handleSubmit(event, navigate) {
     event.preventDefault();
-    console.log("form submitted");
     try {
       setLoading(true);
       if (searchParams) {
         const response = await fetch(
           `https://api.freeapi.app/api/v1/public/meals?page=1&limit=10&query=${searchParams}`
         ).then((res) => res.json());
-        console.log(response.data.data);
         setRecipeList(response.data.data);
         setSearchParams("");
         navigate("/");
@@ -69,9 +67,7 @@ export default function GlobalState({ children }) {
 
   //Handle View Recipe Button
   async function handleViewRecipe(data, navigate) {
-    console.log("clicked");
     setCurrentRecipe(data);
-    console.log(data);
     navigate(`/recipe/${data.id}`);
   }
 
