@@ -9,18 +9,18 @@ function RecipeCard({ data }) {
   const { strMealThumb, strMeal, id, strCategory, strArea } = data;
   const isFavorite = favoritesList.includes(id);
   return (
-    <div className="group bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105 w-full sm:max-w-sm md:max-w-md mx-auto overflow-hidden duration-300">
+    <div className="group mx-auto w-full transform overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-shadow duration-300 hover:scale-105 hover:shadow-2xl sm:max-w-sm md:max-w-md">
       {/* Image */}
-      <div className="relative p-3 ">
+      <div className="relative p-3">
         <img
           src={strMealThumb}
           alt={strMeal}
-          className="w-full h-56 object-cover rounded-xl transition-transform duration-300 group-hover:scale-110"
+          className="h-56 w-full rounded-xl object-cover transition-transform duration-300 group-hover:scale-110"
         />
 
         {/* Favorite Button */}
         <button
-          className="absolute top-4 right-4 p-2 rounded-full bg-orange-100 hover:bg-orange-200 shadow-md transition duration-300"
+          className="absolute right-4 top-4 rounded-full bg-orange-100 p-2 shadow-md transition duration-300 hover:bg-orange-200"
           onClick={() => handleFavoriteClick(id)}
           aria-label="Add to Favorites"
         >
@@ -30,7 +30,7 @@ function RecipeCard({ data }) {
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="orange"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"
@@ -40,22 +40,22 @@ function RecipeCard({ data }) {
           </svg>
         </button>
 
-        <p className="absolute bottom-4 left-4 text-white text-xs bg-orange-500 px-3 py-1 rounded-full shadow-lg uppercase font-semibold tracking-wide">
+        <p className="absolute bottom-4 left-4 rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-lg">
           {strCategory}
         </p>
       </div>
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 truncate group-hover:text-orange-500 transition-colors duration-300">
+        <h3 className="truncate text-xl font-bold text-gray-800 transition-colors duration-300 group-hover:text-orange-500">
           {strMeal}
         </h3>
-        <p className="text-sm text-gray-500 mt-2 mb-4 text-ellipsis text-nowrap whitespace-nowrap overflow-hidden">
+        <p className="mb-4 mt-2 overflow-hidden text-ellipsis whitespace-nowrap text-nowrap text-sm text-gray-500">
           A delicious {strCategory} recipe from {strArea}.
         </p>
         <button
           onClick={() => handleViewRecipe(data, navigate)}
-          className="block w-full text-center text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 font-medium py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="block w-full rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 py-3 text-center font-medium text-white shadow-md transition duration-300 hover:from-orange-600 hover:to-orange-700 hover:shadow-lg"
         >
           View Recipe
         </button>

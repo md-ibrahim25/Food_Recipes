@@ -15,14 +15,14 @@ function Favourites() {
         const favData = await Promise.all(
           favoritesList.map(async (id) => {
             const res = await fetch(
-              `https://api.freeapi.app/api/v1/public/meals/${id}`
+              `https://api.freeapi.app/api/v1/public/meals/${id}`,
             );
             if (!res.ok) {
               throw new Error(`Failed to fetch data for ID: ${id}`);
             }
             const data = await res.json();
             return data.data; // Assuming the API directly returns the desired data
-          })
+          }),
         );
         setFavoriteListData(favData);
       } catch (err) {
@@ -44,9 +44,9 @@ function Favourites() {
   return (
     <>
       {favoritesList && favoritesList.length ? (
-        <div className="card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6 bg-gray-50 rounded-lg shadow-xl">
+        <div className="card-container grid grid-cols-1 gap-8 rounded-lg bg-gray-50 p-6 shadow-xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {loading ? ( // Display spinner while loading
-            <div className="flex justify-center items-center w-screen h-full p-4 text-gray-500">
+            <div className="flex h-full w-screen items-center justify-center p-4 text-gray-500">
               <LoadingSpinner />
             </div>
           ) : favoriteListData.length ? ( // Display recipes once loaded
@@ -54,13 +54,13 @@ function Favourites() {
               <RecipeCard data={item} key={index} />
             ))
           ) : (
-            <div className="flex justify-center items-center w-full h-full p-4 text-gray-500">
+            <div className="flex h-full w-full items-center justify-center p-4 text-gray-500">
               <span>No favorite recipes found.</span>
             </div>
           )}
         </div>
       ) : (
-        <div className="flex justify-center text-4xl items-center w-full h-full p-4 text-gray-500">
+        <div className="flex h-full w-full items-center justify-center p-4 text-4xl text-gray-500">
           <span>No Favorites present</span>
         </div>
       )}

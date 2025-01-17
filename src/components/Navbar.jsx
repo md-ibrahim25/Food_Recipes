@@ -8,26 +8,26 @@ function Navbar() {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="flex flex-col justify-between my-10 mx-10 items-center md:flex-row">
+      <nav className="mx-10 my-10 flex flex-col items-center justify-between md:flex-row">
         {/* Header Section */}
         <div
-          className="bg-[#FF8C00] text-white select-none Ftext-3xl font-extrabold md:mt-3 p-3 text-center rounded-t-xl shadow-lg order-1 max-w-[230px] cursor-default "
+          className="Ftext-3xl order-1 max-w-[230px] cursor-default select-none rounded-t-xl bg-[#FF8C00] p-3 text-center font-extrabold text-white shadow-lg md:mt-3"
           onClick={() => navigate("/")}
         >
           {/* <img src={logo} alt="" width={50} className="inline-flex max-" /> */}
-          <span className="text-[#FFFFFF] text-3xl font-serif italic">
+          <span className="font-serif text-3xl italic text-[#FFFFFF]">
             Recipe
           </span>
-          <span className="text-[#e6e953] text-2xl font-serif">Verse</span>
+          <span className="font-serif text-2xl text-[#e6e953]">Verse</span>
         </div>
 
         {/* Search Bar */}
-        <div className="mt-5 drop-shadow-lg shadow-[#FF6347] w-full sm:max-w-[80%] md:max-w-[40%]  mx-auto rounded-xl order-3 md:order-2">
+        <div className="order-3 mx-auto mt-5 w-full rounded-xl shadow-[#FF6347] drop-shadow-lg sm:max-w-[80%] md:order-2 md:max-w-[40%]">
           <form action="" onSubmit={(e) => handleSubmit(e, navigate)}>
             <input
               type="text"
               placeholder="Search recipes..."
-              className="px-6 py-3 rounded-xl outline-none w-full text-lg"
+              className="w-full rounded-xl px-6 py-3 text-lg outline-none"
               value={searchParams}
               onChange={(e) => setSearchParams(e.target.value)}
             />
@@ -35,13 +35,13 @@ function Navbar() {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex justify-center gap-10 mt-6 text-2xl font-semibold text-[#333333] order-2 md:order-3">
+        <div className="order-2 mt-6 flex justify-center gap-10 text-2xl font-semibold text-[#333333] md:order-3">
           <NavLink
             to={"/"}
             className={({ isActive }) =>
               `cursor-pointer ${
                 isActive ? "text-[#FF6347]" : ""
-              } hover:text-[#FF6347] transition-colors`
+              } transition-colors hover:text-[#FF6347]`
             }
           >
             Home
@@ -51,7 +51,7 @@ function Navbar() {
             className={({ isActive }) =>
               `cursor-pointer ${
                 isActive ? "text-[#FF6347]" : ""
-              } hover:text-[#FF6347] transition-colors`
+              } transition-colors hover:text-[#FF6347]`
             }
           >
             Favorites

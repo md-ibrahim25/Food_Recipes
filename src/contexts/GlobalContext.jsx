@@ -25,7 +25,7 @@ export default function GlobalState({ children }) {
       let recipe = [];
       const request = Array.from({ length: 16 }, async () => {
         const res = await fetch(
-          "https://api.freeapi.app/api/v1/public/meals/meal/random"
+          "https://api.freeapi.app/api/v1/public/meals/meal/random",
         );
         const ress = await res.json();
         return ress;
@@ -48,7 +48,7 @@ export default function GlobalState({ children }) {
       setLoading(true);
       if (searchParams) {
         const response = await fetch(
-          `https://api.freeapi.app/api/v1/public/meals?page=1&limit=10&query=${searchParams}`
+          `https://api.freeapi.app/api/v1/public/meals?page=1&limit=10&query=${searchParams}`,
         ).then((res) => res.json());
         setRecipeList(response.data.data);
         setSearchParams("");
@@ -81,7 +81,7 @@ export default function GlobalState({ children }) {
     //   setFavoritesList(filteredFavList);
     // }
     setFavoritesList((prev) =>
-      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id],
     );
   }
 
@@ -114,7 +114,7 @@ export default function GlobalState({ children }) {
         handleFavoriteClick,
         favoritesList,
         error,
-        setError
+        setError,
       }}
     >
       {children}

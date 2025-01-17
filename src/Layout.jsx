@@ -1,16 +1,15 @@
-import React from 'react'
-import { Details, Favourites, Home } from './pages'
-import { Outlet } from 'react-router-dom'
-import { Navbar } from './components'
+import React from "react";
+import { Details, Favourites, Home } from "./pages";
+import { Outlet } from "react-router-dom";
+import { Navbar } from "./components";
 
 function Layout() {
-
   return (
     <>
-        <Navbar />
-        <Outlet />
+      <Navbar />
+      <Outlet />
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
