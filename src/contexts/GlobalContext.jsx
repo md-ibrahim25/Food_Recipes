@@ -55,9 +55,9 @@ export default function GlobalState({ children }) {
         setRecipeList(response.data.data);
         setSearchParams("");
         navigate("/");
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 500);
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
       } else {
         fetchRandomMeals();
       }
